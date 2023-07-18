@@ -1,0 +1,14 @@
+<h1>New Subjects </h1>
+<%= form_with  model: @subject do  |form| %>
+    
+    <div>
+    <%= form.label :subject_name%><br>
+    <%= form.text_field :subject_name %>
+    </div>
+    <br>
+
+    <%= form.hidden_field :student_id, value: @student&.id %>
+
+    <%= form.submit %>
+<% end %>
+

@@ -1,0 +1,20 @@
+<h1>Show Details</h1>
+
+<p><strong>First Name :  ---  </strong><%= @student.first_name %></p>
+<p><strong>Last Name :  ---  </strong><%= @student.last_name %></p>
+<p><strong>Email :  ---  </strong><%= @student.email%></p>
+<p><strong>Age :  ---  </strong><%= @student.age %></p>
+<p><strong>Date of Birth :  ---  </strong><%= @student.date_of_birth %></p>
+<p><strong>Address :  ---  </strong><%= @student.address %></p>
+<p><strong>Student Fees :  ---  </strong><%= @student.stud_fees %></p>
+
+<%= link_to "Add-subject",new_subject_path(student_id: @student.id) %>
+
+<h2>Student subjects</h2>
+<% @student.subjects.each_with_index do |subject, index| %>
+    <p><b><%= index+1 %>.</b><span> <%= subject.subject_name %></span></p>
+<% end %>
+<br><br>
+<%= link_to "Back" ,students_path %> || <%= link_to "Edit" ,edit_student_path(@student) %>
+
+<hr>
